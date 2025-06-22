@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Website Chat - Settings</title>
+    <link rel="stylesheet" href="options.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🤖 AI Website Chat Settings</h1>
+            <p>Configure your API keys to start chatting with AI about websites</p>
+        </header>
+
+        <main class="main-content">
+            <div class="settings-section">
+                <h2>API Configuration</h2>
+                <p class="section-description">
+                    Enter your API keys for the AI providers you want to use. 
+                    Your keys are stored securely and only used for making API requests.
+                </p>
+
+                <div class="api-provider">
+                    <div class="provider-header">
+                        <h3>
+                            <span class="provider-icon">🤖</span>
+                            Claude (Anthropic)
+                        </h3>
+                        <span class="provider-status" id="claudeStatus">Not configured</span>
+                    </div>
+                    <div class="provider-content">
+                        <div class="input-group">
+                            <label for="claudeApiKey">API Key:</label>
+                            <input 
+                                type="password" 
+                                id="claudeApiKey" 
+                                placeholder="sk-ant-api03-..."
+                                autocomplete="off"
+                            >
+                            <button type="button" class="toggle-visibility" data-target="claudeApiKey">👁️</button>
+                        </div>
+                        <div class="provider-info">
+                            <p>Get your Claude API key from <a href="https://console.anthropic.com/" target="_blank">Anthropic Console</a></p>
+                            <p>Recommended for: General conversations, analysis, creative tasks</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="api-provider">
+                    <div class="provider-header">
+                        <h3>
+                            <span class="provider-icon">🧠</span>
+                            ChatGPT (OpenAI)
+                        </h3>
+                        <span class="provider-status" id="chatgptStatus">Not configured</span>
+                    </div>
+                    <div class="provider-content">
+                        <div class="input-group">
+                            <label for="chatgptApiKey">API Key:</label>
+                            <input 
+                                type="password" 
+                                id="chatgptApiKey" 
+                                placeholder="sk-..."
+                                autocomplete="off"
+                            >
+                            <button type="button" class="toggle-visibility" data-target="chatgptApiKey">👁️</button>
+                        </div>
+                        <div class="provider-info">
+                            <p>Get your OpenAI API key from <a href="https://platform.openai.com/api-keys" target="_blank">OpenAI Platform</a></p>
+                            <p>Recommended for: Quick responses, coding help, factual queries</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="api-provider">
+                    <div class="provider-header">
+                        <h3>
+                            <span class="provider-icon">💎</span>
+                            Gemini (Google)
+                        </h3>
+                        <span class="provider-status" id="geminiStatus">Not configured</span>
+                    </div>
+                    <div class="provider-content">
+                        <div class="input-group">
+                            <label for="geminiApiKey">API Key:</label>
+                            <input 
+                                type="password" 
+                                id="geminiApiKey" 
+                                placeholder="AIza..."
+                                autocomplete="off"
+                            >
+                            <button type="button" class="toggle-visibility" data-target="geminiApiKey">👁️</button>
+                        </div>
+                        <div class="provider-info">
+                            <p>Get your Gemini API key from <a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI Studio</a></p>
+                            <p>Recommended for: Research, data analysis, detailed explanations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h2>Preferences</h2>
+                
+                <div class="preference-group">
+                    <label for="defaultProvider">Default AI Provider:</label>
+                    <select id="defaultProvider">
+                        <option value="claude">Claude (Anthropic)</option>
+                        <option value="chatgpt">ChatGPT (OpenAI)</option>
+                        <option value="gemini">Gemini (Google)</option>
+                    </select>
+                </div>
+
+                <div class="preference-group">
+                    <label>
+                        <input type="checkbox" id="autoExtract">
+                        Automatically extract website content when opening popup
+                    </label>
+                </div>
+
+                <div class="preference-group">
+                    <label>
+                        <input type="checkbox" id="showSummary">
+                        Show website summary in chat
+                    </label>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button id="saveBtn" class="save-btn">Save Settings</button>
+                <button id="testBtn" class="test-btn" disabled>Test Connection</button>
+                <button id="clearBtn" class="clear-btn">Clear All Data</button>
+            </div>
+
+            <div class="status-message" id="statusMessage"></div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <p><strong>Privacy Note:</strong> Your API keys are stored locally in your browser and are never sent to our servers.</p>
+                <p><strong>Usage:</strong> Click the extension icon on any webpage to start chatting with AI about the content.</p>
+                <div class="footer-links">
+                    <a href="#" id="aboutLink">About</a>
+                    <a href="#" id="helpLink">Help</a>
+                    <a href="#" id="privacyLink">Privacy</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="options.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Website Chat</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>AI Website Chat</h1>
+            <div class="provider-selector">
+                <select id="aiProvider">
+                    <option value="claude">Claude</option>
+                    <option value="chatgpt">ChatGPT</option>
+                    <option value="gemini">Gemini</option>
+                </select>
+                <button id="settingsBtn" class="settings-btn" title="Settings">⚙️</button>
+            </div>
+        </header>
+
+        <div class="website-info" id="websiteInfo">
+            <div class="loading">Loading website content...</div>
+        </div>
+
+        <div class="chat-container">
+            <div class="chat-messages" id="chatMessages">
+                <div class="welcome-message">
+                    <p>👋 Hi! I'm ready to help you understand and discuss this website.</p>
+                    <p>Ask me anything about the content, request summaries, or get explanations!</p>
+                </div>
+            </div>
+            
+            <div class="chat-input-container">
+                <div class="input-group">
+                    <textarea 
+                        id="messageInput" 
+                        placeholder="Ask me about this website..." 
+                        rows="2"
+                        maxlength="1000"
+                    ></textarea>
+                    <button id="sendBtn" class="send-btn" disabled>
+                        <span>Send</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="quick-questions">
+                    <button class="quick-btn" data-question="Summarize this page">📝 Summarize</button>
+                    <button class="quick-btn" data-question="What are the main points?">🎯 Key Points</button>
+                    <button class="quick-btn" data-question="Explain this in simple terms">💡 Explain Simply</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="status-bar">
+            <span id="statusText">Ready</span>
+            <button id="clearChat" class="clear-btn">Clear Chat</button>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
